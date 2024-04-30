@@ -8,11 +8,11 @@ import TimerWidget from "./TimerWidget";
 import { Link } from "react-router-dom";
 
 
-const AllBtn = ()=> {
+const AllBtn = ({})=> {
     const [view, setView] = useState(false)
     const [showSetting, setShowSetting] = useState(false)
     const [showtodos, setShowTodos] = useState(true)
-
+    
 
     const handleTodo = (e)=> {
         e.preventDefault()
@@ -30,7 +30,7 @@ const AllBtn = ()=> {
 
 return (
     <>
-    <TimerWidget show={showSetting} onClickTimer={()=>setShowSetting(false)}/>
+    <TimerWidget show={showSetting} onClickTimer={()=>setShowSetting(false)} />
     <TodoWidget clicked={view} showTodos={showtodos}/>
     
 
