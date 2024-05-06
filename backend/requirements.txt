@@ -10,3 +10,4 @@ python-decouple
 flask_migrate
 flask-jwt-extended
 Werkzeug
+Gunicorn
