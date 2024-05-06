@@ -11,3 +11,4 @@ flask_migrate
 flask-jwt-extended
 Werkzeug
 Gunicorn
+psycopg2-binary
