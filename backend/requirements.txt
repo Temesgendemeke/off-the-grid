@@ -1,0 +1,12 @@
+flask
+flask-sqlalchemy
+flask-bcrypt
+DateTime
+flask-session
+redis
+flask-login
+flask-cors
+python-decouple
+flask_migrate
+flask-jwt-extended
+Werkzeug
