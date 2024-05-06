@@ -10,10 +10,10 @@ const TimerWidget = ({show, onClickTimer}) => {
   
   
   const handleWork = (e)=>{
-    setWork(e.target.value)
+    setWork(e.target.value * 60)
   }
   const handleBreak = (e)=>{
-    setBreak(e.target.value)
+    setBreak(e.target.value * 60)
   }
 
   const handleSubmit = (e)=>{

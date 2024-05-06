@@ -5,3 +5,8 @@ ul{
 li:hover{
     text-decoration: underline;  
 }
+.content-list, .content-list li:hover{
+    text-decoration: none;
+    list-style: disc;
+}
+

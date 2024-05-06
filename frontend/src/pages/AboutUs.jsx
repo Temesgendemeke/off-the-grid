@@ -1,17 +1,15 @@
 import React from 'react'
+import NavBar from '../components/NavBar'
+import Header from '../components/Header'
+import Content from '../components/Content'
 
 const AboutUs = () => {
   return (
-    <div>
-    <div className='text items-center '>
-        <h1>OFF THE GRID</h1>
-    </div>
-    <div>
-        <p>
-            bala
-        </p>
-    </div>
-    </div>
+    <>
+    
+    <NavBar/>
+    <Content/>
+    </>
   )
 }
 

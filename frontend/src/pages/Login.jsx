@@ -1,10 +1,15 @@
 import React, {useState} from 'react'
 import NavBar from '../components/NavBar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { useContext } from 'react'
+import { UserContext } from '../App'
 
 export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+  const {setSignedX, id,setId} = useContext(UserContext)
 
   const handleEmail = (e)=>{
     setEmail(e.target.value)}
@@ -14,6 +19,19 @@ export const Login = () => {
   const handleSubmit = (e)=>{
     e.preventDefault()
     console.log("email: " + email + '\n' + "password: " + password)
+    axios.post('http://127.0.0.1:5000/login', {'email':email, 'password':password}).then(
+      (response) =>{
+        setId(response.data.id)
+        navigate('/user/'+ response.data.id)
+        setSignedX(true)
+      }
+    ).catch(
+      (error)=>
+        {
+          if (error.response?.status == 401)  alert("enter correct email or password")
+
+        }
+    )
 }
   return (
     <>

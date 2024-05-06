@@ -1,13 +1,29 @@
-import React, {useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import NavBar from '../components/NavBar'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate} from 'react-router-dom'
+import axios from 'axios'
+import { UserContext } from '../App'
 
-export const SignUp = () => {
+
+
+const SignUp = () => {
+    const {setSignedX} = useContext(UserContext)
+    const navigate = useNavigate()
+   
+
 
    const [name, setName] = useState("")
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState("")
+   const [signed, setSigned] = useState(false)
+   const [id, setId] = useState(null)
+
    
+if (signed)
+{
+    setSignedX(true)
+    navigate('/user/'+id)
+}                
 
 const handleName = (e)=>{
     setName(e.target.value)
@@ -22,6 +38,22 @@ const handlePassword = (e)=>{
 const handleSubmit = (e)=>{
     e.preventDefault()
     console.log("name: " + name + '\n' + "email: " + email + '\n' + "password: " + password)
+
+    axios.post('http://127.0.0.1:5000/signup', {'name':name,'email':email,'password':password}).then((response)=>{
+        if (response.status == 200)
+        {
+            console.log("checke");
+            setId(response.data.id)
+            setSigned(true)
+        }
+        else{
+            alert("already exist")
+        }
+    }).catch((error)=>{
+        if (error.response?.status == 409){
+            alert("user already exist")
+        }
+    })
 }
 
 

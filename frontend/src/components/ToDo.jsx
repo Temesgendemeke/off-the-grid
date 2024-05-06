@@ -1,10 +1,15 @@
+import axios from 'axios';
 import '../index.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function ToDo(props){
-    console.log("from tods" + props.name)
     const [mark, setMark] = useState(false)
     const [hide, setHide] = useState(false)
+
+
+    useEffect(()=>{
+        axios.post('')
+    }, [])
 
     const checkboxhandler = (e)=>{
        setMark(e.target.checked)
@@ -14,7 +19,7 @@ function ToDo(props){
     let vis = mark && "line-through "
     let styles = "flex justify-center " + vis
     
-
+    
    
 
     return (

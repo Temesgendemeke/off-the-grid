@@ -3,7 +3,7 @@ import { CgAdd } from "react-icons/cg";
 import { CgAddR } from "react-icons/cg";
 import { AiOutlineSetting } from "react-icons/ai";
 import TodoWidget from "./TodoWidget";
-import { useState } from "react";
+import { useState} from "react";
 import TimerWidget from "./TimerWidget";
 import { Link } from "react-router-dom";
 
@@ -12,11 +12,13 @@ const AllBtn = ({})=> {
     const [view, setView] = useState(false)
     const [showSetting, setShowSetting] = useState(false)
     const [showtodos, setShowTodos] = useState(true)
-    
+   
+
 
     const handleTodo = (e)=> {
         e.preventDefault()
         setView(!view)
+        inputref.current.focus()
         console.log(view)
         if (!view) setShowSetting(false)
     }
@@ -30,7 +32,7 @@ const AllBtn = ({})=> {
 
 return (
     <>
-    <TimerWidget show={showSetting} onClickTimer={()=>setShowSetting(false)} />
+    <TimerWidget show={showSetting} onClickTimer={()=>setShowSetting(false)}/>
     <TodoWidget clicked={view} showTodos={showtodos}/>
     
 

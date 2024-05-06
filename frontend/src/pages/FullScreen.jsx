@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import axios from 'axios';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useref} from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegStopCircle } from "react-icons/fa";
 import { UserContext } from '../App';
 
+
+
+const formatcounter = (current)=>{
+  let minute = Math.floor(current / 60)
+  let second = Math.floor(current - minute * 60)
+
+  if (minute < 10) minute = '0' + minute
+  if (second < 10) second = '0' + second
+  
+  return minute + ':' + second;
+    
+}
+
+
 const FullScreen = () => {
-  const {work, breaktime} = useContext(UserContext)
+  const {work, breaktime, setWork, id, total} = useContext(UserContext)
   const [quotes, setQuote] = useState([])
+  const [current, setCurrent] = useState(work)
+  const timerid = useRef()
+  
+
+  
 
   useEffect(()=>{
     axios.get('https://api.adviceslip.com/advice').then((response)=>{
@@ -15,13 +34,39 @@ const FullScreen = () => {
     })
   }, [])
 
+  useEffect(()=>{
+    timerid.current = setInterval(()=>{
+      setCurrent(prev => prev - 1)
+      
+      
+    }, 1020)
+    return ()=> clearInterval(timerid.current)
+  },[])
+
+  useEffect(()=>{
+    if (current <= 0)
+    {
+      clearInterval(timerid.current)
+      return;
+    }
+  },[current])
+
+
+  
+ 
+   const handlePause = ()=>{
+       setWork(current)
+       axios.post('http://127.0.0.1:5000/updatetotal'+ id, {
+        totaltime: (work + (current- work))
+       })
+   }
 
 
   return (
     <div>
         <div><h1 className="text-white text-sm text-center pt-5 md:text-3xl">OFF THE GRID</h1> </div>
         <div className='mt-5'>
-        <p className="full-timer text-9xl text-white text-center text-[450px] ">{work}:00</p>
+        <p className="full-timer text-9xl text-white text-center text-[400px] ">{formatcounter(current)}</p>
         </div>
         
         
@@ -32,7 +77,7 @@ const FullScreen = () => {
               quotes[0]
             }</p>
             </div>
-            <Link to='/' className='text-white mr-5 hover:scale-105'><FaRegStopCircle  className='text-white size-10'/></Link>
+            <Link to='/' className='text-white mr-5 hover:scale-105' onClick={handlePause}><FaRegStopCircle  className='text-white size-10'/></Link>
         </div>
     </div>
 
