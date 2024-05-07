@@ -19,7 +19,6 @@ const AllBtn = ({})=> {
         e.preventDefault()
         setView(!view)
         inputref.current.focus()
-        console.log(view)
         if (!view) setShowSetting(false)
     }
 

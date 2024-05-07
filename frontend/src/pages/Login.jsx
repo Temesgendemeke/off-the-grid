@@ -18,7 +18,6 @@ export const Login = () => {
   }
   const handleSubmit = (e)=>{
     e.preventDefault()
-    console.log("email: " + email + '\n' + "password: " + password)
     axios.post('https://off-the-grid.onrender.com/login', {'email':email, 'password':password}).then(
       (response) =>{
         setId(response.data.id)

@@ -26,7 +26,6 @@ const Account = ({hidden=false, onClose}) => {
 
     const handleLogOut = ()=>{
       e.preventDefault()
-      // do some magin here
       axios.get('https://off-the-grid.onrender.com/logout').then((respone)=>{
         navigate('/homepage')
       })

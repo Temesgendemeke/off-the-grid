@@ -18,7 +18,6 @@ const Dashboard = () => {
 
   useEffect(()=>{
     axios.get('https://off-the-grid.onrender.com/dashboard/'+ temp_id).then((response)=> {
-      console.log(response)
       for (let data in response.data)
         {
           setName(response.data[data].name)

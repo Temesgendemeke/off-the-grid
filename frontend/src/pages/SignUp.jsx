@@ -37,12 +37,9 @@ const handlePassword = (e)=>{
 
 const handleSubmit = (e)=>{
     e.preventDefault()
-    console.log("name: " + name + '\n' + "email: " + email + '\n' + "password: " + password)
-
     axios.post('https://off-the-grid.onrender.com/signup', {'name':name,'email':email,'password':password}).then((response)=>{
         if (response.status == 200)
         {
-            console.log("checke");
             setId(response.data.id)
             setSigned(true)
         }
