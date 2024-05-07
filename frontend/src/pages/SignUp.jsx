@@ -39,7 +39,7 @@ const handleSubmit = (e)=>{
     e.preventDefault()
     console.log("name: " + name + '\n' + "email: " + email + '\n' + "password: " + password)
 
-    axios.post('http://127.0.0.1:5000/signup', {'name':name,'email':email,'password':password}).then((response)=>{
+    axios.post('https://off-the-grid.onrender.com/signup', {'name':name,'email':email,'password':password}).then((response)=>{
         if (response.status == 200)
         {
             console.log("checke");
@@ -60,10 +60,7 @@ const handleSubmit = (e)=>{
 
   return (
     <>
-    <div className='flex m-4 items-center justify-between'>
-    <h1 className='text-white text-2xl  max:text-center md-lg:text-red-700 cursor-pointer'>OFF THE GRID</h1>
     <NavBar page="signup"/>
-    </div>
     <div className='h-screen flex justify-center '> 
         <form action="" method="post" className='flex flex-col items-center mt-10' onSubmit={handleSubmit}>
         <h2 className='text-white text-4xl'>SIGN UP</h2>

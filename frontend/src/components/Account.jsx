@@ -27,7 +27,7 @@ const Account = ({hidden=false, onClose}) => {
     const handleLogOut = ()=>{
       e.preventDefault()
       // do some magin here
-      axios.get('http://127.0.0.1:5000/logout').then((respone)=>{
+      axios.get('https://off-the-grid.onrender.com/logout').then((respone)=>{
         navigate('/homepage')
       })
       setSignedX(false)

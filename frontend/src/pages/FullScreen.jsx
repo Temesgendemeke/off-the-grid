@@ -56,7 +56,7 @@ const FullScreen = () => {
  
    const handlePause = ()=>{
        setWork(current)
-       axios.post('http://127.0.0.1:5000/updatetotal'+ id, {
+       axios.post('https://off-the-grid.onrender.com/updatetotal'+ id, {
         totaltime: (work + (current- work))
        })
    }
@@ -66,7 +66,7 @@ const FullScreen = () => {
     <div>
         <div><h1 className="text-white text-sm text-center pt-5 md:text-3xl">OFF THE GRID</h1> </div>
         <div className='mt-5'>
-        <p className="full-timer text-9xl text-white text-center text-[400px] ">{formatcounter(current)}</p>
+        <p className="full-timer text-9xl text-white text-center text-[300px] ">{formatcounter(current)}</p>
         </div>
         
         

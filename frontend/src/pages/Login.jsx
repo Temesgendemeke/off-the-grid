@@ -19,7 +19,7 @@ export const Login = () => {
   const handleSubmit = (e)=>{
     e.preventDefault()
     console.log("email: " + email + '\n' + "password: " + password)
-    axios.post('http://127.0.0.1:5000/login', {'email':email, 'password':password}).then(
+    axios.post('https://off-the-grid.onrender.com/login', {'email':email, 'password':password}).then(
       (response) =>{
         setId(response.data.id)
         navigate('/user/'+ response.data.id)
@@ -35,10 +35,7 @@ export const Login = () => {
 }
   return (
     <>
-    <div className='flex m-4 items-center justify-between'>
-    <h1 className='text-white text-2xl  max:text-center md-lg:text-red-700 cursor-pointer font-sans'>OFF THE GRID</h1>
     <NavBar page="login"/>
-    </div>
     <div className='flex mt-10 justify-center h-screen'>
     <form action="" method="post" className='flex flex-col' onSubmit={handleSubmit}>
     <h2 className='text-white text-center font-bold text-4xl'>LOGIN</h2>

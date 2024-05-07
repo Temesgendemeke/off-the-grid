@@ -17,7 +17,7 @@ const Dashboard = () => {
   let count;
 
   useEffect(()=>{
-    axios.get('http://127.0.0.1:5000/dashboard/'+ temp_id).then((response)=> {
+    axios.get('https://off-the-grid.onrender.com/dashboard/'+ temp_id).then((response)=> {
       console.log(response)
       for (let data in response.data)
         {
