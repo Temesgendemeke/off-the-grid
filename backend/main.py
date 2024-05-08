@@ -1,4 +1,4 @@
-from app import app,db,bcrypt, login_manager, jwt
+from app import app,db,bcrypt
 from model import User, Todos, Timer
 from flask import jsonify, request
 from flask import session
