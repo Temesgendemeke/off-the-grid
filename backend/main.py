@@ -1,7 +1,6 @@
 from app import app,db,bcrypt
 from model import User, Todos, Timer
 from flask import jsonify, request
-from flask import session
 
 @app.route('/')
 def homepage():
