@@ -12,7 +12,7 @@ import AboutUs from './pages/AboutUs.jsx';
 export const UserContext = createContext(null);
 
 function App(){
-  const [work, setWork] = useState(45 * 60)
+  const [work, setWork] = useState(25 * 60)
   const [breaktime, setBreak] = useState(5 * 60)
   const [signed, setSignedX] = useState(false)
   const [id, setId] = useState()

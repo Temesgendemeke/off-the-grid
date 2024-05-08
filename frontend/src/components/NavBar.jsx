@@ -10,8 +10,7 @@ const NavBar = ({page}) => {
 
   return (
     <div className='flex justify-between'>
-        <div><h1 className="text-white pt-5 text-3xl mb-0  ml-2">OFF THE GRID</h1> </div>
-
+       <Link to='/homepage'><h1 className="text-white pt-5 text-3xl mb-0  ml-2 cursor-pointer">OFF THE GRID</h1></Link> 
         <ul className=' flex  uppercase  text-slate-100 items-center gap-4 p-2'>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/aboutus'>about us</Link></li>

@@ -4,6 +4,7 @@ import { useState, useEffect, useContext, useref} from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegStopCircle } from "react-icons/fa";
 import { UserContext } from '../App';
+import BreakTime from '../components/BreakTime';
 
 
 
@@ -67,13 +68,14 @@ const FullScreen = () => {
 
 
   return (
-    <div>
+    <div >
+        {current == 0 && (breaktime != 0 && <BreakTime format={formatcounter}/>)}
         <div><h1 className="text-white text-sm text-center pt-5 md:text-3xl">OFF THE GRID</h1> </div>
         <div className='mt-5'>
         <p className="full-timer text-9xl text-white text-center text-[300px] ">{formatcounter(current)}</p>
         </div>
         <div className='flex items-end  justify-between gap-2  h-32 px-2'>
-            
+        
             <div className=' w-11/12 ml-10'>
             <p className='quote text-slate-100 text-sm'>{
               quotes[0]
