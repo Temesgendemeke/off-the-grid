@@ -42,6 +42,7 @@ const handleSubmit = (e)=>{
         {
             setId(response.data.id)
             setSigned(true)
+            navigate('/user/' + response.data.id)
         }
         else{
             alert("already exist")

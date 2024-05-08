@@ -21,6 +21,7 @@ export const Login = () => {
     axios.post('https://off-the-grid.onrender.com/login', {'email':email, 'password':password}).then(
       (response) =>{
         setId(response.data.id)
+        console.log(response)
         navigate('/user/'+ response.data.id)
         setSignedX(true)
       }
