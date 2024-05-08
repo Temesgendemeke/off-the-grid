@@ -56,7 +56,6 @@ const Dashboard = () => {
         <div className=' '>
           <h2 className='text-7xl'>{name}</h2>
           <p className=' text-slate-100'>{email}</p>
-          {/* <p className='mt-2 text-slate-200 text-[16px] hover:underline cursor-pointer'>edit your profile</p> */}
         </div>
 
         <div className='total '>

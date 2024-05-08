@@ -17,9 +17,10 @@ function App(){
   const [signed, setSignedX] = useState(false)
   const [id, setId] = useState()
   const [total, setTotal] = useState()
+  const [marked, setMark] = useState(false)
   return (
   <>
-  <UserContext.Provider value={{work,setWork,breaktime,setBreak, signed, setSignedX, id,setId, total, setTotal}}>
+  <UserContext.Provider value={{work,setWork,breaktime,setBreak, signed, setSignedX, id,setId, total, setTotal, marked, setMark}}>
   <Routes>
     <Route path='/' element={<LandingPage/>}></Route>
     <Route path='/homepage' element={<HomePage />}></Route>

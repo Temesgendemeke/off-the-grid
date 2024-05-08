@@ -37,11 +37,12 @@ const FullScreen = () => {
   useEffect(()=>{
     timerid.current = setInterval(()=>{
       setCurrent(prev => prev - 1)
-      
-      
     }, 1020)
     return ()=> clearInterval(timerid.current)
-  },[])
+  }
+  
+  
+  ,[])
 
   useEffect(()=>{
     if (current <= 0)
@@ -50,6 +51,9 @@ const FullScreen = () => {
       return;
     }
   },[current])
+
+
+  
 
 
   
@@ -68,8 +72,6 @@ const FullScreen = () => {
         <div className='mt-5'>
         <p className="full-timer text-9xl text-white text-center text-[300px] ">{formatcounter(current)}</p>
         </div>
-        
-        
         <div className='flex items-end  justify-between gap-2  h-32 px-2'>
             
             <div className=' w-11/12 ml-10'>

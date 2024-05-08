@@ -5,7 +5,7 @@ import ToDo from './ToDo'
 
 const TodoWidget = ({clicked, showTodos, ref}) => {
   const [todos, setTodos] = useState([])
-  
+
 
   if (todos.length > 0 && showTodos && !clicked)
   {
