@@ -3,7 +3,6 @@ import { UserContext } from '../App'
 
 const BreakTime = ({format}) => {
     const {breaktime, setBreak} = useContext(UserContext)
-    const [current, setCurrent] = useState(breaktime)
     const timerid = useRef()
 
     useEffect(()=>{
@@ -15,7 +14,7 @@ const BreakTime = ({format}) => {
     const timer = ()=>{
         timerid.current = setInterval(()=>{
             setBreak(prev => prev - 1)
-          }, 1020) 
+          }, 1000) 
     }
 
 

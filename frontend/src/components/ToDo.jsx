@@ -6,24 +6,17 @@ import { UserContext } from '../App';
 
 function ToDo(props){
     const [hide, setHide] = useState(false)
-    const {marked, setMarked} = useContext(UserContext)
-    const [todos, setTodos] = useEffect([])
-
-
-    useEffect(()=>{
-        axios.post('', {'taskname':props.name, 'is_completed':marked})
-        // axios.get(url).then((reponse)=>{
-        //     reponse.data.forEach(element => {
-        //         if (element in todos)
-        //     });
-        //     setTodos(t => [...t, reponse.data.taskname])
-        // })
-    },[])
+    const {marked, setMark} = useContext(UserContext)
+    // const [mark, setMark] = useState()
 
 
     const checkboxhandler = (e)=>{
+        console.log(e)
        setHide(true)
-       setMarked(e.target.checked)
+       console.log(e.target.checked)
+       setMark(e.target.checked)
+       document.getElementById('todoid').style.display = 'hidden'
+     
     }
     
     let vis = marked && "hidden"
@@ -34,10 +27,9 @@ function ToDo(props){
 
     return (
         <div className={styles} >
-            <div className='bg-slate-200  text-black w-1/4 flex justify-between mb-1 p-2 border rounded-md hover:bg-slate-300 size-10'
-                           >
+            <div className='bg-slate-200  text-black w-1/4 flex justify-between mb-1 p-2 border rounded-md hover:bg-slate-300 size-10' id="todoid">
                 <div className='flex'>
-                <input className='ml-1 mr-1 ' type="checkbox" name="todos" id=""  onChange={checkboxhandler}   checked={marked} />
+                <input className='ml-1 mr-1 ' type="checkbox" name="todos"  onChange={checkboxhandler}   checked={marked} />
                <label  >{props.name}</label>
                 </div>
                 <div className='flex gap-1'>

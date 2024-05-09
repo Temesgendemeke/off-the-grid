@@ -15,15 +15,10 @@ const SignUp = () => {
    const [name, setName] = useState("")
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState("")
-   const [signed, setSigned] = useState(false)
    const [id, setId] = useState(null)
 
    
-if (signed)
-{
-    setSignedX(true)
-    navigate('/user/'+id)
-}                
+             
 
 const handleName = (e)=>{
     setName(e.target.value)
@@ -41,7 +36,7 @@ const handleSubmit = (e)=>{
         if (response.status == 200)
         {
             setId(response.data.id)
-            setSigned(true)
+            setSignedX(true)
             navigate('/user/' + response.data.id)
         }
         else{

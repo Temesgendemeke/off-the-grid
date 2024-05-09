@@ -50,7 +50,7 @@ const TodoWidget = ({clicked, showTodos, ref}) => {
   return (
     <>
   {
-    todos.map(todo => <ToDo name={todo}/>)
+    todos.map((todo,index) => <ToDo name={todo} key={index}/>)
   }         
     {todos.length > 0  && <p className=' text-slate-100 fixed buttom-1 mt-3 text-center left-[50%]' >{todos.length}/5 </p>}
 
@@ -64,9 +64,6 @@ const TodoWidget = ({clicked, showTodos, ref}) => {
   </div>
     ): <p className='bg-red-700 text-right font-bold white w-96  p-2 text-white '>Reached the limit commpleted atleast one task</p>
     }
-    
-
-    
     </>
   )
 }

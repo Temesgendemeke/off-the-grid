@@ -18,7 +18,6 @@ const AllBtn = ({})=> {
     const handleTodo = (e)=> {
         e.preventDefault()
         setView(!view)
-        inputref.current.focus()
         if (!view) setShowSetting(false)
     }
 
