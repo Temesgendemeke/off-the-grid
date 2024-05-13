@@ -10,6 +10,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Test from "./pages/Test.jsx";
 
+
 export const UserContext = createContext(null);
 
 function App() {
@@ -87,6 +88,10 @@ function App() {
 						path='/test'
 						element={<Test/>}
 					></Route>
+					<PrivateRoute>
+
+					</PrivateRoute>
+					<PrivateRoute></PrivateRoute>
 				</Routes>
 			</UserContext.Provider>
 		</>
