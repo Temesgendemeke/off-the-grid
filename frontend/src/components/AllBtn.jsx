@@ -2,7 +2,6 @@ import { AiTwotonePlayCircle } from "react-icons/ai";
 import { CgAdd } from "react-icons/cg";
 import { CgAddR } from "react-icons/cg";
 import { AiOutlineSetting } from "react-icons/ai";
-import TodoWidget from "./TodoWidget";
 import { useState} from "react";
 import TimerWidget from "./TimerWidget";
 import { Link } from "react-router-dom";
@@ -31,13 +30,11 @@ const AllBtn = ({})=> {
 return (
     <>
     <TimerWidget show={showSetting} onClickTimer={()=>setShowSetting(false)}/>
-    <TodoWidget clicked={view} showTodos={showtodos}/>
     
 
     <div className="flex justify-center items-center relative">
         <div className="bg-transparent  flex justify-around items-center w-1/4 rounded-lg border-lg border-white border-2 
                              hover:shadow-md shadow-white p-2  fixed bottom-2 ">
-            <button  onClick={ handleTodo} ><CgAdd className="hover:scale-125 w-10 h-10 text-white cursor-pointer"/></button>
 
             <Link to='/timer'><AiTwotonePlayCircle  className="hover:scale-125 w-10 h-10 text-white cursor-pointer"/></Link>
 

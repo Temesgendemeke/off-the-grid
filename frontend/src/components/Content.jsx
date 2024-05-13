@@ -58,7 +58,7 @@ const Content = () => {
          </ul>
       </div>
       <div className='max-w-[50%] border-2 p-2 ml-4'>
-        <img src={todosimg} alt="" className='hover:scale-75'/>
+        <img src={todosimg} alt="" />
       </div>
     </div>
     <h2 className='text-4xl text-center mt-4 '>{about_section.title}</h2>

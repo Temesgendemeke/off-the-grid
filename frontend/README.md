@@ -2,7 +2,6 @@
 
 
 to dos
-- widget for to dos
 - btns for podomre and todos
 - dashboard
 - userlogin 

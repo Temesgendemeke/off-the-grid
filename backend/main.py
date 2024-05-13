@@ -2,9 +2,6 @@ from app import app,db,bcrypt
 from model import User, Todos, Timer
 from flask import jsonify, request
 
-@app.route('/')
-def homepage():
-    return "homepage"
 
 @app.route('/signup', methods=["POST", "GET"])
 def signup():

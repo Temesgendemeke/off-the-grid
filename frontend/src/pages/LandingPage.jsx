@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "../components/NavBar";
 import pic from "../assets/lofi2.jpg";
-import AboutUs from "./AboutUs";
-import HomePage from "./HomePage";
-import { useNavigate } from "react-router";
 import Content from "../components/Content";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer.jsx";

@@ -2,13 +2,12 @@
 
 
 
-todos
-- timer [start, stop] 
-- GET / POST
-- LOGIN 
+fronntend
+- update todos
 
 
-- backend
-- GET/POST -> 
+backend
+- login/signup
+- retrievel userdata
 
-- depoly
+

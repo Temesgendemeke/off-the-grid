@@ -59,7 +59,8 @@ const FullScreen = () => {
 
   
  
-   const handlePause = ()=>{
+   const handlePause = (e)=>{
+       e.preventDefault()
        setWork(current)
        axios.post('https://off-the-grid.onrender.com/updatetotal'+ id, {
         totaltime: (work + (current- work))
@@ -81,7 +82,7 @@ const FullScreen = () => {
               quotes[0]
             }</p>
             </div>
-            <Link to='/homepage' className='text-white mr-5 hover:scale-105' onClick={handlePause}><FaRegStopCircle  className='text-white size-10'/></Link>
+            <Link to='/homepage' className='text-white mr-5 hover:scale-105' ><FaRegStopCircle  className='text-white size-10'/></Link>
         </div>
     </div>
 
