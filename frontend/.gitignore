@@ -22,7 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-backend/_pycache_
+backend/__pycache__
 backend/offgridenv
 frontend/node_modules
 
