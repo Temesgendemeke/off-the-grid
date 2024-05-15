@@ -18,3 +18,12 @@ Finally, I selected PostgreSQL as the database solution. PostgreSQL is a powerfu
 Temesgen demeke 
 [X](https://twitter.com/temesgendora)
 [linkedin](https://www.linkedin.com/in/temesgen-demeke)
+
+## Contribute
+
+Contributions are always welcome!
+
+## License
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
