@@ -8,7 +8,6 @@ import { useState } from "react";
 import { createContext } from "react";
 import LandingPage from "./pages/LandingPage.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
-import Test from "./pages/Test.jsx";
 
 
 export const UserContext = createContext(null);
@@ -83,10 +82,6 @@ function App() {
 					<Route
 						path='/aboutus'
 						element={<AboutUs />}
-					></Route>
-					<Route
-						path='/test'
-						element={<Test/>}
 					></Route>
 			
 					

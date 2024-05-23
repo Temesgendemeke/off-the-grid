@@ -17,7 +17,7 @@ const Dashboard = () => {
   let count;
 
   const getinfo = async ()=>{
-    axios.get('http://127.0.0.1:5000/dashboard/'+ temp_id).then((response)=> {
+    axios.get('https://off-the-grid.onrender.com/dashboard/'+ temp_id).then((response)=> {
       for (let data in response.data)
         {
           setName(response.data[data].name)

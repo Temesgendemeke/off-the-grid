@@ -1,6 +1,4 @@
 import { AiTwotonePlayCircle } from "react-icons/ai";
-import { CgAdd } from "react-icons/cg";
-import { CgAddR } from "react-icons/cg";
 import { AiOutlineSetting } from "react-icons/ai";
 import { useState} from "react";
 import TimerWidget from "./TimerWidget";
@@ -10,7 +8,6 @@ import { Link } from "react-router-dom";
 const AllBtn = ({})=> {
     const [view, setView] = useState(false)
     const [showSetting, setShowSetting] = useState(false)
-    const [showtodos, setShowTodos] = useState(true)
    
 
 

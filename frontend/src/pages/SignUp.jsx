@@ -32,7 +32,7 @@ const handlePassword = (e)=>{
 
 const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post('http://127.0.0.1:5000/signup', {'name':name,'email':email,'password':password}).then((response)=>{
+    axios.post('https://off-the-grid.onrender.com/signup', {'name':name,'email':email,'password':password}).then((response)=>{
         if (response.status == 200)
         {
             setId(response.data.id)
