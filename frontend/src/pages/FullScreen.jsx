@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import axios from 'axios';
 import { useState, useEffect, useContext, useref} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { FaRegStopCircle } from "react-icons/fa";
 import { UserContext } from '../App';
 import BreakTime from '../components/BreakTime';
@@ -11,6 +11,7 @@ import BreakTime from '../components/BreakTime';
 const formatcounter = (current)=>{
   let minute = Math.floor(current / 60)
   let second = Math.floor(current - minute * 60)
+
 
   if (minute < 10) minute = '0' + minute
   if (second < 10) second = '0' + second
@@ -25,6 +26,7 @@ const FullScreen = () => {
   const [quotes, setQuote] = useState([])
   const [current, setCurrent] = useState(work)
   const timerid = useRef()
+  const navigate = useNavigate()
   
 
   
@@ -65,6 +67,7 @@ const FullScreen = () => {
        axios.post('https://off-the-grid.onrender.com/updatetotal'+ id, {
         totaltime: (work + (current- work))
        })
+       navigate('/user/'+id)
    }
 
 
@@ -82,7 +85,7 @@ const FullScreen = () => {
               quotes[0]
             }</p>
             </div>
-            <Link to='/homepage' className='text-white mr-5 hover:scale-105' ><FaRegStopCircle  className='text-white size-10'/></Link>
+            <button className='text-white mr-5 hover:scale-105' onClick={handlePause}><FaRegStopCircle  className='text-white size-10'/></button>
         </div>
     </div>
 

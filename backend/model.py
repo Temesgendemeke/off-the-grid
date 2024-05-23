@@ -1,6 +1,8 @@
 from app import db, app
 from datetime import datetime
 
+
+# user table
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     name = db.Column(db.String(30), nullable=False)
@@ -12,6 +14,7 @@ class User(db.Model):
     def __repr__(self) -> str:
         return f'<{self.name}>'
     
+# todos table
 class Todos(db.Model):
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     taskname = db.Column(db.String(120), nullable=False)
@@ -22,7 +25,8 @@ class Todos(db.Model):
     def __repr__(self) -> str:
         return f'<{self.taskname}>'
         
-    
+
+# timer table
 class Timer(db.Model):
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     Totaltime = db.Column(db.Float)

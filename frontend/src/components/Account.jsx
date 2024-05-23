@@ -37,7 +37,7 @@ const Account = ({hidden=false, onClose}) => {
   return (
     <div className='fixed inset-0 backdrop-blur-sm ' onClick={handleBgClose} id="container">
     <div className='text-white fixed right-[60px] top-[50px] border-2  p-10 text-center cursor-pointer uppercase '>
-          {signed? <ul><li><Link to='dashboard'>Dashboard</Link></li> <Link><li onClick={handleLogOut}>LOG OUT</li></Link></ul>:<ul><li> <Link to='/login'>LOGIN</Link></li><li><Link to='/signup'>SIGN UP</Link></li></ul>}
+          {signed? <ul><li><Link to='dashboard'>Dashboard</Link></li> <Link><li onClick={handleLogOut}><Link to='homepage'>LOG OUT</Link></li></Link></ul>:<ul><li> <Link to='/login'>LOGIN</Link></li><li><Link to='/signup'>SIGN UP</Link></li></ul>}
     </div>
     </div>
   )

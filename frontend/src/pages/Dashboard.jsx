@@ -16,8 +16,8 @@ const Dashboard = () => {
   const temp_id = id
   let count;
 
-  useEffect(()=>{
-    axios.get('https://off-the-grid.onrender.com/dashboard/'+ temp_id).then((response)=> {
+  const getinfo = async ()=>{
+    axios.get('http://127.0.0.1:5000/dashboard/'+ temp_id).then((response)=> {
       for (let data in response.data)
         {
           setName(response.data[data].name)
@@ -33,6 +33,10 @@ const Dashboard = () => {
         setTodoCount(count)
     }
     )
+  }
+
+  useEffect(()=>{
+    getinfo()
   })
 
 
@@ -59,12 +63,12 @@ const Dashboard = () => {
         </div>
 
         <div className='total '>
-          <h2 className='flex items-center  justify-center border-[1px] rounded-md  border-white size-64 text-center text-7xl hover:bg-slate-950 cursor-pointer'>{total}</h2>
+          <h2 className='flex items-center  justify-center border-[1px] rounded-md  border-white size-64 text-center text-7xl hover:bg-slate-950 cursor-pointer'>{total || 0}</h2>
           <p className='text-center mt-2'>TOTAL SPENT</p>
         </div>
 
         <div className='compeletedtodos '>
-        <h2 className='border-[1px] rounded-s-md  border-white size-64 text-7xl text-center  flex items-center  justify-center hover:bg-slate-950 cursor-pointer'>{todo_count} </h2>
+        <h2 className='border-[1px] rounded-s-md  border-white size-64 text-7xl text-center  flex items-center  justify-center hover:bg-slate-950 cursor-pointer'>{todo_count || 0} </h2>
           <p className='text-center mt-2 uppercase'>Completed tasks</p>
         </div>
       </div>    

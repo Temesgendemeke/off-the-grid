@@ -88,10 +88,8 @@ function App() {
 						path='/test'
 						element={<Test/>}
 					></Route>
-					<PrivateRoute>
-
-					</PrivateRoute>
-					<PrivateRoute></PrivateRoute>
+			
+					
 				</Routes>
 			</UserContext.Provider>
 		</>

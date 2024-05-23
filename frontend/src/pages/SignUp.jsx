@@ -7,7 +7,7 @@ import { UserContext } from '../App'
 
 
 const SignUp = () => {
-    const {setSignedX} = useContext(UserContext)
+    const {setSignedX, setId } = useContext(UserContext)
     const navigate = useNavigate()
    
 
@@ -15,7 +15,7 @@ const SignUp = () => {
    const [name, setName] = useState("")
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState("")
-   const [id, setId] = useState(null)
+ 
 
    
              
@@ -32,7 +32,7 @@ const handlePassword = (e)=>{
 
 const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post('https://off-the-grid.onrender.com/signup', {'name':name,'email':email,'password':password}).then((response)=>{
+    axios.post('http://127.0.0.1:5000/signup', {'name':name,'email':email,'password':password}).then((response)=>{
         if (response.status == 200)
         {
             setId(response.data.id)
@@ -54,7 +54,7 @@ const handleSubmit = (e)=>{
   return (
     <>
     <NavBar page="signup"/>
-    <div className='h-screen flex justify-center '> 
+    <div className='h-screen flex justify-center ' onSubmit={handleSubmit}> 
         <form action="" method="post" className='flex flex-col items-center mt-10' onSubmit={handleSubmit}>
         <h2 className='text-white text-4xl'>SIGN UP</h2>
         <input type="text" name="" id="2" placeholder='name' className='p-2 rounded-md outline-none w-[300px] h-[50px] mt-2' onChange={handleName}/>
